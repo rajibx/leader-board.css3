@@ -85,9 +85,8 @@ Courses Styles
 ----------------------*/
 
 .courses {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 24px;
+    display: flex;
+    align-items: center;
 }
 .course {
     width: 253px;
@@ -95,6 +94,9 @@ Courses Styles
     padding: 13px;
     border-radius: 15px;
     box-shadow: 0px 5.34229px 13.3557px rgba(0, 0, 0, 0.05);
+}
+.course-container {
+    padding: 20px;
 }
 .course .course-banner img {
     width: 224px;
@@ -139,14 +141,18 @@ Media Queries
         width: 100%;
     }
     .players,
-    .blogs,
-    .courses {
+    .blogs {
         grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 10px;
     }
     .player,
     .blog,
     .course {
         flex-direction: column;
+    }
+    .courses {
+        display: flex;
+        flex-wrap: wrap;
     }
 }
 
@@ -156,9 +162,9 @@ Media Queries
         width: 100%;
     }
     .players,
-    .blogs,
-    .courses {
+    .blogs {
         grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 15px;
     }
     .player,
     .blog {
@@ -166,10 +172,11 @@ Media Queries
         align-items: center;
     }
 
+    /* courses are not getting in middle side of tablet device
+    need help Later */
 
-  
     .courses {
-        justify-content: space-around;
+        display: flex;
+        flex-wrap: wrap;
     }
 }
-courses 
